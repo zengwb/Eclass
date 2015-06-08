@@ -1,6 +1,9 @@
 /**
   * @author zengwenbin
-  * @time 2015-05-20
+  * @email zwb461153861@sina.cn
+  * @qq 461153861
+  * @version 1.1.0
+  * @date 2015-05-20
 */
 
 ;(function (win) {
