@@ -21,8 +21,7 @@
     * 生成待函数执行前先执行的函数
 
     * @params method {Function} 待执行函数
-    * @params ident {Boolean} 返回函数 false 接收参数类型包括数组 true 不包括
-    * @params {Function} 先执行函数
+    * @params ident {Boolean} 是否支持数组参数 false 接收参数类型包括数组 true 不包括
   */
   var execBeforeSetter = function (method, ident) {
     if (!method || typeof method !== 'function') return;
@@ -102,7 +101,6 @@
 
    * @params obj {Object} 源对象
    * @params name {String} 指定key  
-   * @params {Array}
   */
   var checkKeyword = function (method, word) {
     if (!(method instanceof Function)) return;
@@ -117,8 +115,7 @@
     * 得到构造函数非属性赋值代码段，用以重新组织构造函数
 
     * @params method {Function} 被过滤函数
-    * @params paramArr {Array}
-    * @params {Function} 过滤后的函数字符串
+    * @params paramArr {Array} 参数名数组
   */
   var checkContent = function (method, paramArr) {
     if (!method) return '';
@@ -140,7 +137,6 @@
 
     * @params  array {Array} 数组
     * @params  callback {Function} 过滤函数
-    * @params {Array} 处理后数组
   */
   var filter = function (array, callback) {
     var ret = [];
@@ -196,7 +192,6 @@
 
    * @params obj {Object} 源对象
    * @params name {String} 制定key  
-   * @params {Array}
   */
   var filterOptions = function (obj, name) {
     if (!obj) return;
@@ -308,7 +303,8 @@
 
   /**
     * 类继承
-
+    
+    * @params superClass {Object|Function} 父类
   */
   var inherit = function (superClass) {
     this.pro['superClass'] = superClass;
